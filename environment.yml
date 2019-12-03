@@ -9,6 +9,7 @@ dependencies:
   - libedit=3.1.20181209=hb402a30_0
   - libffi=3.2.1=h475c297_4
   - ncurses=6.1=h0a44026_1
+  - numpy=1.17.3=py37hde6bac1_0
   - openssl=1.1.1d=h1de35cc_3
   - pip=19.3.1=py36_0
   - python=3.6.9=h359304d_0
