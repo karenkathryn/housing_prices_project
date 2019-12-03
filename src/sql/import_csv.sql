@@ -1,10 +1,12 @@
 /*
     Author:     Yu Fen Lin
     Date:       Dec. 2, 2019
-    Purpose:                    
+    Purpose:          
     Note: TODO: 
 */
 DROP TABLE IF EXISTS real_property_sales;
+DROP TABLE IF EXISTS residential_building;
+
 CREATE TABLE real_property_sales (
     ExciseTaxNbr BIGINT, 
     Major TEXT, 
@@ -31,34 +33,64 @@ CREATE TABLE real_property_sales (
     PropertyClass BIGINT, 
     SaleWarning TEXT
 );
--- CREATE TABLE real_property_sales (
---     ExciseTaxNbr INTEGER, 
---     Major CHAR(6), 
---     Minor CHAR(4), 
---     DocumentDate CHAR(10), 
---     SalePrice INTEGER,
---     RecordingNbr CHAR(14), 
---     Volume CHAR(3), 
---     PPage CHAR(3), 
---     PlatNbr CHAR(6), 
---     PlatType CHAR(1), 
---     PlatLot CHAR(14),
---     PlatBlock CHAR(7), 
---     SellerName CHAR(300), 
---     BuyerName CHAR(300), 
---     PropertyType INTEGER, 
---     PrincipalUse INTEGER,
---     SaleInstrument INTEGER, 
---     AFForestLand CHAR(1), 
---     AFCurrentUseLand CHAR(1), 
---     AFNonProfitUse CHAR(1),
---     AFHistoricProperty CHAR(1), 
---     SaleReason INTEGER, 
---     PropertyClass INTEGER, 
---     SaleWarning INTEGER
--- );
+
+CREATE TABLE residential_building (
+    Major BIGINT, 
+    Minor BIGINT, 
+    BldgNbr BIGINT, 
+    NbrLivingUnits BIGINT, 
+    AAddress TEXT,
+    BuildingNumber TEXT, 
+    Fraction TEXT, 
+    DirectionPrefix TEXT, 
+    StreetName TEXT,
+    StreetType TEXT, 
+    DirectionSuffix TEXT, 
+    ZipCode TEXT, 
+    Stories REAL, 
+    BldgGrade BIGINT,
+    BldgGradeVar BIGINT, 
+    SqFt1stFloor BIGINT, 
+    SqFtHalfFloor BIGINT, 
+    SqFt2ndFloor BIGINT,
+    SqFtUpperFloor BIGINT, 
+    SqFtUnfinFull BIGINT, 
+    SqFtUnfinHalf BIGINT, 
+    SqFtTotLiving BIGINT,
+    SqFtTotBasement BIGINT, 
+    SqFtFinBasement BIGINT, 
+    FinBasementGrade BIGINT,
+    SqFtGarageBasement BIGINT, 
+    SqFtGarageAttached BIGINT, 
+    DaylightBasement TEXT,
+    SqFtOpenPorch BIGINT, 
+    SqFtEnclosedPorch BIGINT, 
+    SqFtDeck BIGINT, 
+    HeatSystem BIGINT,
+    HeatSource BIGINT, 
+    BrickStone BIGINT, 
+    ViewUtilization TEXT, 
+    Bedrooms BIGINT,
+    BathHalfCount BIGINT, 
+    Bath3qtrCount BIGINT, 
+    BathFullCount BIGINT, 
+    FpSingleStory BIGINT,
+    FpMultiStory BIGINT, 
+    FpFreestanding BIGINT, 
+    FpAdditional BIGINT, 
+    YrBuilt BIGINT,
+    YrRenovated BIGINT, 
+    PcntComplete BIGINT, 
+    Obsolescence BIGINT, 
+    PcntNetCondition BIGINT,
+    Condition BIGINT, 
+    AddnlCost BIGINT
+);
 
 COPY real_property_sales
 FROM '/Users/chuhsitseng/flatiron/project/housing_prices_project/data/raw/EXTR_RPSale.csv'
 DELIMITER ',' CSV HEADER;
 
+COPY residential_building
+FROM '/Users/chuhsitseng/flatiron/project/housing_prices_project/data/raw/EXTR_ResBldg.csv'
+DELIMITER ',' CSV HEADER;
