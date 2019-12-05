@@ -91,7 +91,7 @@ CREATE TABLE residential_building (
     AddnlCost BIGINT
 );
 
--- Create skeleton table for parcel --
+-- -- Create skeleton table for parcel --
 CREATE TABLE parcel (
     Major TEXT, 
     Minor TEXT, 
@@ -178,14 +178,14 @@ CREATE TABLE parcel (
 
 -- Copy the CSV contents of each file and place it into the appropriate table
 COPY real_property_sales
-FROM '/Users/chuhsitseng/flatiron/project/housing_prices_project/data/raw/EXTR_RPSale.csv'
-DELIMITER ',' CSV HEADER;
+    FROM '/Users/chuhsitseng/flatiron/project/housing_prices_project/data/raw/EXTR_RPSale.csv'
+    DELIMITER ',' CSV HEADER;
 
 COPY residential_building
-FROM '/Users/chuhsitseng/flatiron/project/housing_prices_project/data/raw/EXTR_ResBldg.csv'
-DELIMITER ',' CSV HEADER;
+    FROM '/Users/chuhsitseng/flatiron/project/housing_prices_project/data/raw/EXTR_ResBldg.csv'
+    DELIMITER ',' CSV HEADER;
 
 SET client_encoding = 'latin1';
 COPY parcel
     FROM '/Users/chuhsitseng/flatiron/project/housing_prices_project/data/raw/EXTR_Parcel.csv'
-        DELIMITER ',' CSV HEADER;
+    DELIMITER ',' CSV HEADER;
