@@ -20,6 +20,3 @@ WHERE sales.saleprice > 0 -- Exclude sale price equal 0
     AND sales.PrincipalUse = 6 -- Principal Use is residential
     AND building.ZipCode != '' -- Exclude zip code is empty
 ;
-
--- ON (CAST(a.Major AS BIGINT) = CAST(b.Major AS BIGINT))
--- AND (CAST(a.Minor AS BIGINT) = CAST(b.Minor AS BIGINT))
