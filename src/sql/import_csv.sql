@@ -10,6 +10,7 @@ DROP TABLE IF EXISTS residential_building;
 DROP TABLE IF EXISTS parcel;
 
 -- Create skeleton table for real property sales --
+-- 25 columns
 CREATE TABLE real_property_sales (
     ExciseTaxNbr BIGINT, 
     Major TEXT, 
@@ -38,6 +39,7 @@ CREATE TABLE real_property_sales (
 );
 
 -- Create skeleton table residentail_building --
+-- 50 columns
 CREATE TABLE residential_building (
     Major BIGINT, 
     Minor BIGINT, 
@@ -92,6 +94,7 @@ CREATE TABLE residential_building (
 );
 
 -- -- Create skeleton table for parcel --
+-- 81 columns
 CREATE TABLE parcel (
     Major TEXT, 
     Minor TEXT, 
